@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mudassir Clothing</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Basic Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Ensures the body takes up the entire viewport height */
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            background-color: #333;
+            color: white;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        /* Hamburger Menu (Three lines button) */
+        .hamburger-menu {
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+            position: absolute;
+            left: 20px; /* Position to the left of "Mudassir" */
+        }
+
+        .hamburger-menu div {
+            width: 25px; /* Reduced width */
+            height: 3px; /* Reduced height */
+            background-color: white;
+            margin: 5px 0;
+        }
+
+        /* Logo */
+        header h1 {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-left: 50px; /* Adds space after the hamburger menu */
+        }
+
+        /* Navigation Links */
+        .nav-links {
+            display: flex;
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            padding: 10px;
+            display: block;
+            transition: background-color 0.3s;
+        }
+
+        .nav-links a:hover {
+            background-color: #555;
+        }
+
+        /* Slide-down Menu */
+        .slide-down-menu {
+            display: none;
+            position: absolute;
+            top: 60px; /* Below the header */
+            left: 0;
+            width: 200px; /* Further reduced width of the slide-down menu */
+            background-color: #333;
+            padding: 10px 0;
+            z-index: 999;
+        }
+
+        .slide-down-menu ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .slide-down-menu ul li {
+            text-align: center;
+        }
+
+        .slide-down-menu ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            padding: 10px 0;
+            display: block;
+        }
+
+        .slide-down-menu ul li a:hover {
+            background-color: #555;
+        }
+
+        /* Hero Section (empty for now) */
+        .hero {
+            padding-top: 80px;
+            text-align: center;
+            padding: 50px;
+            background-color: #e4e4e4;
+            color: #333;
+            flex-grow: 1; /* Ensures this section takes available space */
+        }
+
+        /* Mobile View Styles */
+        @media screen and (max-width: 768px) {
+            /* Hide nav links by default on mobile */
+            .nav-links {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                background-color: #333;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                padding: 20px 30px;
+            }
+
+            /* Show nav links when menu is active */
+            .nav-links.active {
+                display: flex;
+            }
+
+            /* Display the hamburger menu */
+            .hamburger-menu {
+                display: flex;
+            }
+
+            /* Adjust the spacing and layout of the links */
+            .nav-links li {
+                margin-left: 0;
+                margin-bottom: 20px;
+            }
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+        }
+
+        footer p {
+            font-size: 1rem;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <!-- Hamburger Menu (Three lines button) -->
+        <div class="hamburger-menu" id="hamburger-menu">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+        <!-- Brand Name -->
+        <div class="logo">
+            <h1>Mudassir</h1>
+        </div>
+
+        <!-- Navigation Links -->
+        <ul class="nav-links" id="nav-links">
+            <li><a href="#">Men</a></li>
+            <li><a href="#">Women</a></li>
+            <li><a href="#">Other</a></li>
+            <li><a href="#">Cart</a></li>
+        </ul>
+    </header>
+
+    <!-- Slide-down Menu (initially hidden) -->
+    <div class="slide-down-menu" id="slide-menu">
+        <ul>
+            <li><a href="#">Help</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Rate Us</a></li> <!-- Added "Rate Us" option -->
+        </ul>
+    </div>
+
+    <!-- Main Content (empty for now) -->
+    <section class="hero"></section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Mudassir Clothing. All rights reserved.</p>
+        <p>desrever all .gnidoc nissudam</p> <!-- Reversed text at the bottom -->
+    </footer>
+
+    <script>
+        // Toggle the slide-down menu visibility
+        const hamburgerMenu = document.getElementById("hamburger-menu");
+        const slideMenu = document.getElementById("slide-menu");
+
+        hamburgerMenu.addEventListener("click", () => {
+            slideMenu.style.display = slideMenu.style.display === "none" || slideMenu.style.display === "" ? "block" : "none";
+        });
+    </script>
+</body>
+</html>
